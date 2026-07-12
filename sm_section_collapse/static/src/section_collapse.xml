@@ -11,21 +11,4 @@
             </span>
         </xpath>
     </t>
-
-    <!-- sale.ListRenderer.RecordRow is a primary inherit registered before this
-         module's assets, so the extension above does not reach it: template
-         extensions newer than a primary template's own asset block are skipped
-         when its parent is resolved. Extend it directly; inert if sale is not
-         installed. -->
-    <t t-inherit="sale.ListRenderer.RecordRow" t-inherit-mode="extension">
-        <xpath expr="//t[@t-if='!isInvisible']" position="after">
-            <span t-if="smShowToggle and smShowToggle(record, column)"
-                  class="o_sm_section_toggle float-end text-nowrap fw-normal"
-                  t-on-click.stop.prevent="() => this.smToggleSection(record)">
-                <span class="text-muted me-3" t-out="smItemCountLabel(record)"/>
-                <a href="#" t-out="smToggleLabel(record)"/>
-            </span>
-        </xpath>
-    </t>
-
 </templates>
