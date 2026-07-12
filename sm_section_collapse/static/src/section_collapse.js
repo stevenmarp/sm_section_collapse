@@ -3,13 +3,14 @@
 import { useState } from "@odoo/owl";
 import { _t } from "@web/core/l10n/translation";
 import { patch } from "@web/core/utils/patch";
+import { sprintf } from "@web/core/utils/strings";
 import { SectionAndNoteListRenderer } from "@account/components/section_and_note_fields_backend/section_and_note_fields_backend";
 
 const STORAGE_PREFIX = "sm_section_collapse:";
 
-patch(SectionAndNoteListRenderer.prototype, {
+patch(SectionAndNoteListRenderer.prototype, "sm_section_collapse.SectionAndNoteListRenderer", {
     setup() {
-        super.setup();
+        this._super();
         let stored = {};
         try {
             stored = JSON.parse(
@@ -63,7 +64,7 @@ patch(SectionAndNoteListRenderer.prototype, {
                 count++;
             }
         }
-        return count === 1 ? _t("1 item") : _t("%s items", count);
+        return count === 1 ? _t("1 item") : sprintf(_t("%s items"), count);
     },
 
     smToggleLabel(record) {
@@ -88,7 +89,7 @@ patch(SectionAndNoteListRenderer.prototype, {
     },
 
     getRowClass(record) {
-        let classes = super.getRowClass(record);
+        let classes = this._super(record);
         if (!this.smIsSection(record) && record !== this.editedRecord) {
             const section = this.smParentSection(record);
             if (section && this.smIsCollapsed(section)) {
