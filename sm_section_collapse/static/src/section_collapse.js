@@ -51,8 +51,8 @@ odoo.define("sm_section_collapse.section_collapse", function (require) {
                 var toggleLabel = isCollapsed ? _t("Expand") : _t("Collapse");
 
                 var $toggle = $(
-                    '<span class="o_sm_section_toggle float-end text-nowrap fw-normal" style="cursor: pointer; user-select: none;">' +
-                        '<span class="text-muted me-3">' +
+                    '<span class="o_sm_section_toggle float-right text-nowrap fw-normal" style="cursor: pointer; user-select: none;">' +
+                        '<span class="text-muted mr-3">' +
                         countLabel +
                         "</span>" +
                         '<a href="#">' +
