@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Collapse Expand Section Lines | Collapse Expand Section on One2many Fields ",
-    "version": "15.0.1.0.0",
+    "version": "14.0.1.0.0",
     "category": "Productivity",
     "summary": "Collapse or expand order lines under section lines in Sales Orders, Invoices, Bills and Purchase Orders, with item count per section.",
     "description": """
@@ -28,11 +28,9 @@ and display the number of items under it.
         "static/description/icon.png",
     ],
     "depends": ["account"],
-    "assets": {
-        "web.assets_backend": [
-            "sm_section_collapse/static/src/**/*",
-        ],
-    },
+    "data": [
+        "views/assets.xml",
+    ],
     "installable": True,
     "application": False,
     "auto_install": False,
