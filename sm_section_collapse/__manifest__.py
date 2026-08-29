@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    "name": "Collapse Expand Section Lines | Collapse Expand Section on One2many Fields ",
+    "name": "Collapse and expand section lines in Sales Orders | Purchase Orders | Invoices and Bills with live item count",
     "version": "16.0.1.0.0",
     "category": "Productivity",
-    "summary": "Collapse or expand order lines under section lines in Sales Orders, Invoices, Bills and Purchase Orders, with item count per section.",
+    "summary": "Collapse and expand section lines in Sales Orders, Purchase Orders, Invoices and Bills with live item count.",
     "description": """
-Collapse Expand Section Lines
-=============================
+Collapsible Section Lines
+==========================
 
 By default, Odoo allows you to add section lines in the Sales Order,
 Invoice, Bill, and Purchase Order modules.
